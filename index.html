@@ -11,29 +11,36 @@
             background-color: rgba(245, 245, 220, 0.603);
         }
         input {
-            padding: 3px;
-            margin-left: 5px;
+            padding: 4px;
+            border-radius: 3px;
         }
         fieldset {
+            
+            max-width: 800px;
+            min-width: 300px;
             background-color: white;
-            margin: 20px 10px;
+            margin: auto;
+            border-radius: 5px;
         }
-        .sobre {margin-left: 80px;}
-        .caixa {margin-left: 10px; margin-top: 10px;}
-        .preferencia{margin-top: 10px; margin-bottom: 10px;}
-        .idad{margin-top: 10px; margin-bottom: 10px;}
-        .id{margin-left: 20px;}
+        fieldset {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
         <form action="" method="post" autocomplete="on">
             <fieldset>
                 <legend>Dados Pessoais</legend>
-            <label for="inome">Nome </label>
-            <input type="text" name="nome" id="inome" autocomplete="nome" placeholder="nome" minlength="3" maxlength="10" size="20">
+            <p>
+                <label for="inome">Nome </label>
+                <input type="text" name="nome" id="inome" autocomplete="nome" placeholder="nome" minlength="3" maxlength="10" size="20">
+            </p>
     
-            <label class="sobre" for="isobrenome">Sobrenome </label>
-            <input class="caixa" type="text" name="sobrenome" id="isobrenome" autocomplete="sobrenome" placeholder="sobrenome" minlength="10" maxlength="25" size="30">
+            <p>
+                <label for="isobrenome">Sobrenome </label>
+                <input type="text" name="sobrenome" id="isobrenome" autocomplete="sobrenome" placeholder="sobrenome" minlength="10" maxlength="25" size="30">
+            </p>
 
            <p>
             <label for="iemail">E-mail </label>
@@ -44,16 +51,21 @@
             <label for="itel">Telefone </label>
             <input type="tel" name="tel" id="itel" required placeholder="(xx) xxxxx-xxxx" pattern="^\(\d{2}\)\d{4,5}-\d{4}$">
             </p>
-            <p>
-                <label for="inasc">Data de Nascimento </label>
-                <input type="date" name="nasc" id="inasc">
+            
+                <p>
+                    <label for="inasc">Data de Nascimento </label>
+                    <input type="date" name="nasc" id="inasc">
+                </p>
 
-                <label class="id" for="iidade">Idade </label>
-                <input class="idad" type="number" name="idade" id="iidade"
-                oninput="iidade.innerHTML = Number(newDate.value) - Number(inasc.value)">
-            </p>
+               <p>
+                    <label class="id" for="iidade">Idade </label>
+                    <input class="idad" type="number" name="idade" id="iidade"
+                    oninput="iidade.innerHTML = Number(new Date.value) - Number(nasc.value)">
+               </p>
+            
             <script>
-                var data = newDate()
+                var data = new Date()
+                var nasc = document.getElementById ('inasc')
             </script>
             </fieldset>
             <fieldset>
@@ -94,15 +106,19 @@
             </fieldset>
             <fieldset>
                 <legend>Nivel de Satisfação com o Curso</legend>
-            <p>
-                <label for="inivel">Satisfação</label>
-                <input type="range" name="nivel" id="inivel" min="1" max="5" step="0.5">
+            
+                <p>
+                    <label for="inivel">Satisfação</label>
+                    <input type="range" name="nivel" id="inivel" min="1" max="5" step="0.5">
+                </p>
 
-                <label for="inum">Nota </label>
-                <input type="range" name="num" id="inum" min="1" max="10" step="0.5" value="5"
-                oninput="ival.innerHTML = Number(inum.value)">
-                <output id="ival">5</output>
-            </p>
+                <p>
+                    <label for="inum">Nota </label>
+                    <input type="range" name="num" id="inum" min="1" max="10" step="0.5" value="5"
+                    oninput="ival.innerHTML = Number(inum.value)">
+                    <output id="ival">5</output>
+                </p>
+            
             </fieldset>
             <fieldset>
                 <legend>Esportes Favoritos</legend>
